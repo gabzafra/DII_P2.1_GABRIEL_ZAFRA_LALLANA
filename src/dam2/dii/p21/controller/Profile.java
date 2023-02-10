@@ -25,9 +25,13 @@ public class Profile extends HttpServlet {
       if (request.getParameter("upd") != null) {
         // update
         User user = UserService.getUserById(request.getParameter("upd"));
-        // TODO comprobar si eres admin o si es tu user
-        request.setAttribute("user", user);
-        request.getRequestDispatcher("update-profile.jsp").forward(request, response);
+        if (user.getId() == idAuth || UserService.getUserById(idAuth).isAdmin()) {
+          request.setAttribute("user", user);
+          request.getRequestDispatcher("update-profile.jsp").forward(request, response);
+        } else {
+          response.sendError(404);
+        }
+
       } else {
         // datos desde la sesion
         User user = UserService.getUserById(idAuth);
