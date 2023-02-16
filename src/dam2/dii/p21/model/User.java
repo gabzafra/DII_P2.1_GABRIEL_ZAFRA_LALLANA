@@ -8,20 +8,19 @@ public class User {
   private String email;
   private String phone;
   private String password;
-  private String lang;
   private boolean isAdmin;
 
   public User() {
-    this("", "", "", "", "", false, "ES");
+    this("", "", "", "", "", false);
   }
 
   public User(String name, String surnames, String email, String phone, String password,
-      boolean isAdmin, String lang) {
-    this(-1, name, surnames, email, phone, password, isAdmin, lang);
+      boolean isAdmin) {
+    this(-1, name, surnames, email, phone, password, isAdmin);
   }
 
   public User(int id, String name, String surnames, String email, String phone, String password,
-      boolean isAdmin, String lang) {
+      boolean isAdmin) {
     this.id = id;
     this.name = name;
     this.surnames = surnames;
@@ -29,7 +28,6 @@ public class User {
     this.phone = phone;
     this.password = password;
     this.isAdmin = isAdmin;
-    this.lang = lang;
   }
 
   public int getId() {
@@ -86,14 +84,6 @@ public class User {
 
   public void setAdmin(boolean isAdmin) {
     this.isAdmin = isAdmin;
-  }
-
-  public String getLang() {
-    return lang;
-  }
-
-  public void setLang(String lang) {
-    this.lang = lang;
   }
 
 }
