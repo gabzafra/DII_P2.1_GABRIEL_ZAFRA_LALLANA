@@ -14,13 +14,20 @@ public class UserDAOinMem implements UserDAO {
     userList = new HashMap<Integer, User>();
     id = 0;
 
-    createUser(new User("Admin", "The Admin", "admin@mail.com", "000000000", "admin", true));
-    createUser(new User("Adam", "Alda Almirante", "adam@mail.com", "666554433", "aaaa", false));
-    createUser(new User("Betty", "Bueno Baños", "betty@mail.com", "555443322", "bbbb", false));
-    createUser(new User("Charlie", "Corral Casar", "charlie@mail.com", "444332211", "cccc", false));
-    createUser(new User("Cecil", "Cinta Coso", "cecil@mail.com", "420332811", "cece", false));
-    createUser(new User("Diane", "Dueñas Donoso", "diane@mail.com", "333221100", "dddd", false));
-    createUser(new User("Eric", "Estepa España", "eric@mail.com", "111223344", "eeee", false));
+    createUser(new User("Admin", "The Admin", "admin@mail.com", "000000000",
+        "TpBOWO9Z9l0vw3b6ICMt2ha9vz/OoLp40gDxRs/LSPCWzEeWYehRhXQhInrjuHgt", true, "es"));
+    createUser(new User("Adam", "Alda Almirante", "adam@mail.com", "666554433",
+        "ZoglyH60ViSdTsKMBvF8iZ1uOlYMSKuJ+wv90W8VrsMihjNmaKcfJ6eS5paIU3ph", false, "en"));
+    createUser(new User("Betty", "Bueno Baños", "betty@mail.com", "555443322",
+        "+RkUhOfPBRrtVhw2ENAkxj+7gmCI/K2bQEa/nwHTm88605SnbwNs1xXijIEno0qS", false, "es"));
+    createUser(new User("Charlie", "Corral Casar", "charlie@mail.com", "444332211",
+        "4KiTMULo5Oqj6Ysz4U1Z2Xw5QMmzinZrL/60cH9N2PB5sHkm/TVV9T/GWN0bgJnz", false, "es"));
+    createUser(new User("Cecil", "Cinta Coso", "cecil@mail.com", "420332811",
+        "+5DAZC0gLmFuWMPf/1Fyyay8IktYj8x5gfUOvmX19ukNsIc0MLsATwcjfobiClDK", false, "es"));
+    createUser(new User("Diane", "Dueñas Donoso", "diane@mail.com", "333221100",
+        "Y6op3BH0iagkccymeVTibelnHmJBRU03m0FSQtgVAC7belL1bUJwPW/kBrqKEoCb", false, "en"));
+    createUser(new User("Eric", "Estepa España", "eric@mail.com", "111223344",
+        "6+3SMSF0VZ5I1OcBaEjpaBih05Z/KarvUPbIe1Ugcy+xzO2FXzW4dJArBBvxepkr", false, "es"));
   }
 
   public static UserDAOinMem getInstance() {
@@ -37,7 +44,7 @@ public class UserDAOinMem implements UserDAO {
 
   private static User cloneUser(User c) {
     return new User(c.getId(), c.getName(), c.getSurnames(), c.getEmail(), c.getPhone(),
-        c.getPassword(), c.isAdmin());
+        c.getPassword(), c.isAdmin(), c.getLang());
   }
 
   @Override
